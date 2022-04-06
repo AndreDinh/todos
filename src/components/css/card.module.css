@@ -1,0 +1,87 @@
+
+  
+  /* 
+  case-1: horizontal scroll
+  what I do on programmatic skill page😅
+  This is responsive but not fluid as you told me
+  */
+  /* 
+  .container{
+    padding: 2em;
+    display: grid;
+    grid-gap: 2em;  
+  }
+  
+  @media (min-width: 550px){
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 750px){
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  } */
+  
+  /* 
+  case-2: make it fluid with percentage 
+  This what I think at first after you told me ki we need fluid design😅
+  This is fluid but not responsive and horizontal scroll shown
+  */
+  
+  /* .container{
+    padding: 2em;
+    display: grid;
+    grid-gap: 2em;  
+    grid-template-columns: repeat(4, 25%);
+  } */
+  
+  /* 
+  case-3: make it fluid, responsive and set min-width of cards💯
+  This single property make design fluid & responsive at time same
+  */
+  
+  .container{
+    padding: 2em;
+    display: grid;
+    grid-gap: 2em;  
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* // Change "auto-fit" to "auto-fill" above to see the difference */
+  }
+  
+  
+  
+  
+  
+  .talent_card{
+    padding: 2em;
+    border-radius: 0.3em;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .talent_card p {
+     margin-top: 0;
+  }
+  
+  .talent_card span{
+    font-weight: bold;
+    position: relative;
+    margin-left: 15px;
+  }
+  
+  .talent_card span:before{
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 10px;
+      border-bottom: 1px solid #000;
+      top: 10px;
+      left: -15px;
+    }
