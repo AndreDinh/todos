@@ -8,7 +8,7 @@ export default function Card() {
     const fetchData = async () =>{
       setIsloading(true);
       const res = await fetch(
-        'https://jsonplaceholder.typicode.com/posts/',
+        'https://hn.algolia.com/api/v1/search?query=react',
       );
       const json = await res.json();
         addTodos(json);
