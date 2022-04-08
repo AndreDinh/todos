@@ -1,8 +1,10 @@
-ul{
-  margin: 25px;
-  border:1px solid black;
-  width: 50%;
+li h2{
+  margin: 0;
 }
+li p{
+  color: rgb(108, 102, 102);
+}
+
 li {
   display: block;
   padding: 20px;

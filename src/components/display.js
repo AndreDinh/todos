@@ -2,7 +2,7 @@ import Card from "./card";
 
 import Forms from "./forms";
 import { useState } from "react";
-import Pratice from "./pratice";
+// import Pratice from "./pratice";
 import Compleated from "./compleated";
 
 export default function Display() {
@@ -18,7 +18,7 @@ export default function Display() {
             <option>low to high date</option>
             <option>low to high priotoierty </option>
           </select>
-          <Pratice />
+          <Card />
         </div>
       ) : (
         <Forms />
