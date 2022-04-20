@@ -8,6 +8,9 @@ import classes from "./css/forms.module.css";
 export default function Forms() {
   const [newTitle, enterTitle] = useState("");
   const [newDescription, enterDescription] = useState("");
+  const [newTodos, enterdTodos] = useState("");
+  const [formCompleated, isCompleated] = useState(false);
+
   const newTodo = {
     title: newTitle,
     description: newDescription,
@@ -17,7 +20,6 @@ export default function Forms() {
     
     console.log(`new todo entered ${newTodo.title} ${newTodo.description}`);
     postingData(newTodo);
-    <Compleated todo={newTodo} />;
   }
 
   async function postingData(newTodo) {
@@ -29,14 +31,18 @@ export default function Forms() {
       },
     });
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     enterTitle('');
     enterDescription('');
+    enterdTodos(newTodo);
+    isCompleated(true);
   }
 
 
   return (
+    
     <React.Fragment>
+      {formCompleated ? (<Compleated todo={newTodos}/>) :
       <div className={classes.form}>
         <h3>My Form</h3>
         <form action="" id="myForm">
@@ -55,6 +61,7 @@ export default function Forms() {
           <button onClick={sumbitHandler}>Sumbit</button>
         </form>
       </div>
+       }
     </React.Fragment>
   );
 }
