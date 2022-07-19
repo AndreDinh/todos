@@ -2,23 +2,28 @@ import Card from "./card";
 
 import Forms from "./forms";
 import { useState } from "react";
+// import Pratice from "./pratice";
+import Compleated from "./compleated";
 
-export default function Display(){
-    const [showForm, formDisplay] = useState(true);
-    return(
-        <> 
-        <h1>Display everything</h1>
-        <p>Sort here</p>
-        <select> 
+export default function Display() {
+  const [showForm, formDisplay] = useState(false);
+  const [compleated, isCompleated] = useState(true);
+  return (
+    <>
+      <button onClick={() => formDisplay(true)}>Create a new toDo</button>
+      {!showForm ? (
+        <div>
+          <p>Sort here</p>
+          <select>
             <option>low to high date</option>
             <option>low to high priotoierty </option>
-        </select>
-        <div>
-            <h2>Display list here</h2>
-            <Card/>
+          </select>
+          <Card />
         </div>
-        <button onClick={() => formDisplay(false)}>Create a new toDo</button>
-        {!showForm && <Forms/>}
-        </>
-    )
+      ) : (
+        <Forms />
+      )}
+      {compleated && <></>}
+    </>
+  );
 }
